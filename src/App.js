@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import Footer from "./components/Footer";
+import { createContext } from "react";
+
+export const ThemeContext = createContext("");
 
 function App() {
+  const [theme, setTheme] = useState("light");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext.Provider value={theme}>
+      <div className={"wrapper " + theme}>
+        <div className="toggle">
+          <button
+            onClick={() => {
+              setTheme("light");
+            }}
+          >
+            ☀️
+          </button>
+          <button
+            onClick={() => {
+              setTheme("dark");
+            }}
+          >
+            🌙
+          </button>
+        </div>
+        <h1>My blog</h1>
+        <Footer />
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
