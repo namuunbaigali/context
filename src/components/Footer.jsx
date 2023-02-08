@@ -16,7 +16,10 @@ const SocialIcon = ({ icon, link }) => {
 };
 export default function Footer() {
   const socials = [
-    { icon: "facebook", link: "https://www.facebook.com" },
+    {
+      icon: "facebook",
+      link: "https://www.facebook.com/profile.php?id=1000114111903547",
+    },
     { icon: "twitter", link: "https://www.twitter.com" },
     { icon: "instagram", link: "https://www.instagram.com" },
   ];
